@@ -1,0 +1,45 @@
+<form method="post" id="page-4-form">
+	<label>Tekst: <input type="text" name="todoText" /></label>
+	<label>Dato: <input type="text" name="todoDate" /></label>
+	<input type="submit" class="btn" value="OK" />
+</form>
+
+
+<ul>
+	<li><span class="date">01.01.2014</span> Plukke opp fyrverkerirester fra nyttårsfeiringen</li>
+	<li><span class="date">03.01.2014</span> Pakke ned julepynt og juletre. Husk å legge juletrefoten på det lure stedet.</li>
+	<li><span class="date">03.01.2014</span> Brygge øl etter oppskrift fra Kjartan og Andreas</li>
+	<li><span class="date">03.01.2014</span> Kjøpe bjørkepinner og sette pinnekjøttet i vann 12 timer før koking</li>
+	<li><span class="date">04.01.2014</span> Vaske og polere bilen, sjekke dekktrykket, 2.5 foran og 2.8 bak</li>
+	<li><span class="date">04.01.2014</span> Sette pinnekjøttet på kok, hente ved og fyre i ovnen</li>
+	<li><span class="date">04.01.2014</span> Pugge lorem ipsum dolor sit amet</li>
+	<li><span class="date">04.01.2014</span> Pugge lorem ipsum dolor sit amet, consectetur adipisicing elit, sed </li>
+</ul>
+
+<script type="text/javascript">
+
+$('#page-4-form').submit(function (e) {
+	e.stopPropagation();
+	e.preventDefault();
+	var text = $(this).find('[name=todoText]').val();
+	var date = moment($(this).find('[name=todoDate]').val(), 'DD.MM.YYYY');
+	var itemCount = $('.page-3 li').length;
+	var $newItem = $('<li><span class="date">' + date.format('DD.MM.YYYY') + '</span> ' + text + '</li>');
+
+	$('.page-4 li').each(function(index) {
+		var itemDate = moment($(this).find('.date').text(), 'DD.MM.YYYY');
+		if(date.isBefore(itemDate)){
+			$(this).before($newItem);
+			return false;
+		}else if(index === itemCount-1){
+			$(this).after($newItem);
+		}
+	});
+	setTimeout(function(){
+		$newItem.addClass('animating');
+	}, 0)
+	
+	return false;
+})
+
+</script>

@@ -1,0 +1,110 @@
+body {
+  padding: 20px 40px;
+}
+code {
+  white-space: pre-wrap;
+  display: block;
+  background-color: #eeeeee;
+  width: 700px;
+  color: #333333;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0;
+}
+.page-2 li,
+.page-3 li,
+.page-4 li,
+.page-5 li,
+.page-6 li {
+  padding: 5px 10px;
+  border: 1px solid #efc07a;
+  display: block;
+  margin: 2px 0;
+  width: 700px;
+}
+.page-2 li .date,
+.page-3 li .date,
+.page-4 li .date,
+.page-5 li .date,
+.page-6 li .date {
+  opacity: 0.5;
+  margin-right: 20px;
+}
+.page-3 li,
+.page-4 li,
+.page-5 li,
+.page-6 li {
+  -webkit-animation-duration: 1s;
+  overflow: hidden;
+}
+.page-3 .animating,
+.page-4 .animating,
+.page-5 .animating,
+.page-6 .animating {
+  -webkit-animation: insert-list-item 1s;
+}
+@-webkit-keyframes insert-list-item {
+  0% {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+  }
+  50% {
+    height: 20px;
+    padding: 5px 10px;
+    opacity: 0;
+  }
+  100% {
+    height: 20px;
+    padding: 5px 10px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes insert-list-item2 {
+  0% {
+    height: 0;
+    padding: 0 10px;
+    opacity: 0;
+  }
+  50% {
+    height: 21px;
+    padding: 5px 10px;
+    opacity: 0;
+  }
+  100% {
+    height: 21px;
+    padding: 5px 10px;
+    opacity: 1;
+  }
+}
+.page-4 li,
+.page-5 li,
+.page-6 li {
+  color: #555555;
+}
+.page-4 li:hover,
+.page-5 li:hover,
+.page-6 li:hover {
+  border-color: #cf861a;
+  color: #000000;
+  cursor: pointer;
+}
+.page-6 i {
+  opacity: .2;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  padding-right: 16px;
+  padding-bottom: 16px;
+}
+.page-6 li:hover i {
+  transition: opacity 0.8s ease-out 0.2s;
+  opacity: 1;
+}
+.page-6 i:hover {
+  border: 1px solid #555555;
+}
+.page-6 .deleting {
+  -webkit-animation: insert-list-item2 1s reverse;
+}

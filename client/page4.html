@@ -23,7 +23,7 @@ $('#page-4-form').submit(function (e) {
 	e.preventDefault();
 	var text = $(this).find('[name=todoText]').val();
 	var date = moment($(this).find('[name=todoDate]').val(), 'DD.MM.YYYY');
-	var itemCount = $('.page-3 li').length;
+	var itemCount = $('.page-4 li').length;
 	var $newItem = $('<li><span class="date">' + date.format('DD.MM.YYYY') + '</span> ' + text + '</li>');
 
 	$('.page-4 li').each(function(index) {

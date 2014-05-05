@@ -24,7 +24,7 @@ $('#page-3-form').submit(function (e) {
 	var text = $(this).find('[name=todoText]').val();
 	var date = moment($(this).find('[name=todoDate]').val(), 'DD.MM.YYYY');
 	var itemCount = $('.page-3 li').length;
-	var $newItem = $('<li><span class="date">' + date.format('DD.MM.YYYY') + '</span> ' + text + '</li>');
+	var $newItem = $('<li class="hide"><span class="date">' + date.format('DD.MM.YYYY') + '</span> ' + text + '</li>');
 
 	$('.page-3 li').each(function(index) {
 		var itemDate = moment($(this).find('.date').text(), 'DD.MM.YYYY');
@@ -36,7 +36,7 @@ $('#page-3-form').submit(function (e) {
 		}
 	});
 	setTimeout(function(){
-		$newItem.addClass('animating');
+		$newItem.addClass('animating').removeClass('hide');
 	}, 0)
 	
 	return false;

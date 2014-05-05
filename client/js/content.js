@@ -7,10 +7,12 @@ $(function () {
 		5: 'Ikoner og operasjoner',
 		6: 'Mer fokus',
 		7: 'CSS transition',
-		8: 'CSS animation'
+		8: 'CSS animation',
+		9: '@Keyframes',
+		10: 'Eksempel: TODO'
 	};
 
-	var page = 7, pageCount = Object.keys(titles).length;
+	var page = 1, pageCount = Object.keys(titles).length;
 
 	var getPage = function(){
 		$.ajax({
